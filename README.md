@@ -53,8 +53,14 @@ Today Wordle: sword
 Please input the art you want to recreate line by line (c = colored | b = blank)
 Type 'x' to end early
 Art line 1: cbccb
+
+Please input the art you want to recreate line by line (c = colored | b = blank)
+Type 'x' to end early
 Art line 2: bccbb
+
+Please input the art you want to recreate line by line (c = colored | b = blank)
+Type 'x' to end early
 Art line 3: x
 
-Word 1: sward
-Word 2: sword
+Word 1: score
+Word 2: awoke
