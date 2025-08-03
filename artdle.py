@@ -10,7 +10,6 @@ file_path = os.path.join(base_dir, 'valid-wordle-words.txt')
 # Open and read the file
 with open(file_path, 'r', encoding='utf-8') as f:
     words = [line.strip() for line in f]  # strip() removes \n and spaces
-    print(f"words: {len(words)}")
 
 
 def get_answer():
