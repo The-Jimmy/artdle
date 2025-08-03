@@ -26,10 +26,10 @@ def get_answer():
 def get_art():
     arts = []
     n = 0
+    print("\nPlease input the art you want to recreate line by line (c = colored | b = blank)")
+    print("Type 'x' to end early")
     while n < 6:
         try:
-            print("\nPlease input the art you want to recreate line by line (c = colored | b = blank)")
-            print("Type 'x' to end early")
             a = input(f"Art line {n + 1}: ").lower()
 
             # Allow early exit
