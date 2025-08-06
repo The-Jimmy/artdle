@@ -1,5 +1,6 @@
 import copy
 import os
+import sys
 
 # Get the folder where the current Python file is located
 base_dir = os.path.dirname(__file__)
@@ -15,9 +16,14 @@ with open(file_path, 'r', encoding='utf-8') as f:
 def get_answer():
     while True:
         try:
-            answer = input("Today Wordle: ").lower()
-            if len(answer) != 5 or answer not in words:
+            answer = input("Today Wordle('x' to close the program): ").lower()
+            
+            if answer == "x":
+                sys.exit()
+
+            elif len(answer) != 5 or answer not in words:
                 raise ValueError
+            
         except ValueError:
             print("Invalid word, Please try again.")
             continue
@@ -52,7 +58,7 @@ def get_art():
 
 def check_art(check_word, check_answer, check_art):
     for i in range(len(check_art)):
-        if (check_art[i] == "c" and check_word[i] != check_answer[i]) or (check_art[i] == "b" and check_word[i] == check_answer[i]):
+        if (check_art[i] == "c" and check_word[i] != check_answer[i]) or (check_art[i] == "b" and check_word[i] in check_answer):
             return False
     
     return True
@@ -75,6 +81,8 @@ def find_art(words:list, answer:str, arts:list):
 
 def show_result(result:list, arts):
     n = 0
+
+    print("====ANSWER====")
     for res in result:
         n += 1
         if res == "-":
