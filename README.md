@@ -48,7 +48,7 @@ Shows your final Wordle art made out of real valid Wordle words.
 ```bash
 # Run the script
 python artdle.py
-Today Wordle: sword
+Today Wordle('x' to close the program): sword
 
 Please input the art you want to recreate line by line (c = colored | b = blank)
 Type 'x' to end early
@@ -56,5 +56,6 @@ Art line 1: cbccb
 Art line 2: bccbb
 Art line 3: x
 
+====ANSWER====
 Word 1: score
 Word 2: awoke
