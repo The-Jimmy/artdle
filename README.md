@@ -1,4 +1,4 @@
-# Artdle 🎨🟩🟨⬜
+# Artdle 🎨🟩🟨⬛
 
 Artdle is a Python project that **recreates art patterns using Wordle rules**.  
 You give it:
