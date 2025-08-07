@@ -1,6 +1,9 @@
 import copy
 import os
 import sys
+from colorama import init, Fore, Back, Style
+
+init()
 
 # Get the folder where the current Python file is located
 base_dir = os.path.dirname(__file__)
@@ -79,16 +82,25 @@ def find_art(words:list, answer:str, arts:list):
             result.append(copy_words[0])
     return result
 
-def show_result(result:list, arts):
-    n = 0
-
+def show_result(result: list, arts: list):
     print("====ANSWER====")
-    for res in result:
-        n += 1
+    for i, res in enumerate(result):
+        print(f"Word {i+1}:", end=' ')
+        
         if res == "-":
-            print(f"Word {n}: Not possible, art: {arts[n-1]}")
-        else:
-            print(f"Word {n}: {res}")
+            print(f"Not possible, art: {arts[i]}")
+            continue
+        
+        art = arts[i]  # Corresponding art for this result
+        for r_char, a_char in zip(res, art):
+            if a_char == 'c':
+                print(Back.GREEN + Fore.BLACK + r_char + Style.RESET_ALL, end='')
+            elif a_char == 'b':
+                print(Back.BLACK + Fore.BLACK + r_char + Style.RESET_ALL, end='')
+            else:
+                # Optional: handle unexpected characters
+                print(r_char, end='')
+        print()  # New line after each word
 
 
 def main():
