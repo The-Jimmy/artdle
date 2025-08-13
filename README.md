@@ -9,11 +9,6 @@ It then finds valid 5-letter Wordle words that match your pattern — line by li
 
 ---
 
-## 📂 Project Structure
-
-
----
-
 ## 🚀 How It Works
 
 1. **Load Wordle words**  
