@@ -1,3 +1,7 @@
+"""
+This program make art out of today's wordle
+"""
+
 import copy
 import os
 import sys
@@ -17,22 +21,25 @@ with open(file_path, 'r', encoding='utf-8') as f:
 
 
 def get_answer():
+    """Get today wordle answer"""
     while True:
         try:
             answer = input("Today Wordle('x' to close the program): ").lower()
-            
+
             if answer == "x":
                 sys.exit()
 
             elif len(answer) != 5 or answer not in words:
                 raise ValueError
-            
+
         except ValueError:
             print("Invalid word, Please try again.")
             continue
         return answer
 
+
 def get_art():
+    """Get user art input"""
     arts = []
     n = 0
     print("\nPlease input the art you want to recreate line by line (c = colored | b = blank)")
@@ -59,17 +66,22 @@ def get_art():
 
     return arts
 
+
 def check_art(check_word, check_answer, check_art):
+    """Finding the word for user's art"""
     for i in range(len(check_art)):
-        if (check_art[i] == "c" and check_word[i] != check_answer[i]) or (check_art[i] == "b" and check_word[i] in check_answer):
+        if ((check_art[i] == "c" and check_word[i] != check_answer[i]) or
+            (check_art[i] == "b" and check_word[i] in check_answer)):
             return False
-    
+
     return True
 # check_art("sword", "sword", "ccccb") False
 # check_art("sward", "sword", "cbccb") False
 # check_art("sdorn", "sword", "cbccb") True
 
+
 def find_art(words:list, answer:str, arts:list):
+    """Getting the actual word aftewr running check_art():"""
     result = []
     for art in arts:
         copy_words = copy.deepcopy(words)
@@ -82,15 +94,17 @@ def find_art(words:list, answer:str, arts:list):
             result.append(copy_words[0])
     return result
 
+
 def show_result(result: list, arts: list):
+    """Printing the result"""
     print("====ANSWER====")
     for i, res in enumerate(result):
         print(f"Word {i+1}:", end=' ')
-        
+
         if res == "-":
             print(f"Not possible, art: {arts[i]}")
             continue
-        
+
         art = arts[i]  # Corresponding art for this result
         for r_char, a_char in zip(res, art):
             if a_char == 'c':
@@ -112,4 +126,4 @@ def main():
     show_result(result, arts)
 
 if __name__ == "__main__":
-      main()
+    main()
