@@ -1,5 +1,14 @@
 # Artdle 🎨🟩🟨⬛
 
+### tldr:
+
+**You need to install colorama by using this code.**
+```bash
+pip install -r requirements.txt
+```
+
+---
+
 Artdle is a Python project that **recreates art patterns using Wordle rules**.  
 You give it:
 - **Today's Wordle answer**  
@@ -11,6 +20,13 @@ It then finds valid 5-letter Wordle words that match your pattern — line by li
 
 ## 📂 Project Structure
 
+```text
+artdle/
+├── artdle.py              # Main CLI script
+├── valid-wordle-words.txt # Valid wordle words
+├── requirements.txt       # Python dependencies
+└── README.md              # This file
+```
 
 ---
 
@@ -39,7 +55,7 @@ Shows your final Wordle art made out of real valid Wordle words.
 ## 📦 Requirements
 
 - Python **3.7+**
-- No external libraries required (uses only the Python standard library)
+- colorama is required
 
 ---
 
