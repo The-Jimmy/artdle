@@ -94,9 +94,9 @@ def show_result(result: list, arts: list):
         art = arts[i]  # Corresponding art for this result
         for r_char, a_char in zip(res, art):
             if a_char == 'c':
-                print(Back.GREEN + Fore.BLACK + r_char + Style.RESET_ALL, end='')
+                print(Back.GREEN + Fore.WHITE + r_char + Style.RESET_ALL, end='')
             elif a_char == 'b':
-                print(Back.BLACK + Fore.BLACK + r_char + Style.RESET_ALL, end='')
+                print(Back.BLACK + Fore.WHITE + r_char + Style.RESET_ALL, end='')
             else:
                 # Optional: handle unexpected characters
                 print(r_char, end='')
